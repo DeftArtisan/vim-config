@@ -3,9 +3,10 @@ call plug#begin('~/AppData/Local/nvim/plugged')
 
 ==== PlugS
 Plug 'vim-scripts/L9'
+Plug 'Valloric/YouCompleteMe'
+Plug 'neoclide/coc.nvim', {'branch' : 'release'}
 Plug 'tpope/vim-fugitive'
-Plug 'scrooloose/nerdtree'
-Plug 'Valloric/You CompleteMe' 
+Plug 'scrooloose/nerdtree' 
 Plug 'airblade/vim-gitgutter'
 Plug 'scrooloose/syntastic' 
 Plug 'christoomey/vim-conflicted'
@@ -82,6 +83,10 @@ let g:tsuquyomi_disable_default_mappings = 1
 autocmd FileType typescript noremap <silent> <C-]> :TsuDefinition<CR>
 autocmd FileType typescriptreact noremap <silent> <C-]> :TsuDefinition<CR>
 
+let g:ycm_semantic_triggers =  {
+  \   'c,cpp,objc': [ 're!\w{3}', '_' ],
+  \ }
+
 " === flake8
 let g:flake8_show_in_file=1
 
@@ -111,3 +116,9 @@ nmap <silent> <A-Up> :wincmd k<CR>
 nmap <silent> <A-Down> :wincmd j<CR>
 nmap <silent> <A-Left> :wincmd h<CR>
 nmap <silent> <A-Right> :wincmd l<CR>
+
+let g:ycm_global_ycm_extra_conf = "~/.vim/ycm_extra_conf.py" 
+
+let g:ycm_clangd_uses_ycmd_caching = 0
+
+let g:ycm_clangd_binary_path = exepath("clangd")
