@@ -9,7 +9,6 @@ flags = [
     '-Wno-long-long',
     '-Wno-variadic-macros',
     '-fexceptions',
-    # 'c++11'.
     '-std=c++17',
     '-x', 'c++',
     '-isystem', '/System/Library/Frameworks/Python.framework/Headers',
