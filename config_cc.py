@@ -9,6 +9,7 @@ flags = [
     '-Wno-long-long',
     '-Wno-variadic-macros',
     '-fexceptions',
+    ##reassign when alterating between C/C++
     '-std=c++17',
     '-x', 'c++',
     '-isystem', '/System/Library/Frameworks/Python.framework/Headers',
